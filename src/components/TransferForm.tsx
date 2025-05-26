@@ -104,7 +104,7 @@ const TransferForm = () => {
               </SelectTrigger>
               <SelectContent className="bg-slate-800 border-slate-600">
                 {isMetaMaskConnected ? (
-                  <SelectItem value="metamask" className="hover:bg-slate-700 text-white">
+                  <SelectItem value="metamask\" className="hover:bg-slate-700 text-white">
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">🦊</span>
                       <span>MetaMask</span>
