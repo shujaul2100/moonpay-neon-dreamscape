@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -16,6 +15,27 @@ const TransferForm = () => {
   const [receiverCoin, setReceiverCoin] = useState("");
   const [receiverChain, setReceiverChain] = useState("");
   const [amount, setAmount] = useState("");
+  const [isMetaMaskConnected, setIsMetaMaskConnected] = useState(false);
+  const [connectedAddress, setConnectedAddress] = useState("");
+
+  useEffect(() => {
+    const checkMetaMaskConnection = async () => {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+          if (accounts.length > 0) {
+            setIsMetaMaskConnected(true);
+            setConnectedAddress(accounts[0]);
+            setSelectedWallet("metamask");
+          }
+        } catch (error) {
+          console.error("Error checking MetaMask connection:", error);
+        }
+      }
+    };
+
+    checkMetaMaskConnection();
+  }, []);
 
   const wallets = [
     { id: "metamask", name: "MetaMask", icon: "🦊" },
@@ -83,14 +103,23 @@ const TransferForm = () => {
                 <SelectValue placeholder="Choose your wallet" />
               </SelectTrigger>
               <SelectContent className="bg-slate-800 border-slate-600">
-                {wallets.map((wallet) => (
-                  <SelectItem key={wallet.id} value={wallet.id} className="hover:bg-slate-700 text-white">
+                {isMetaMaskConnected ? (
+                  <SelectItem value="metamask" className="hover:bg-slate-700 text-white">
                     <div className="flex items-center space-x-2">
-                      <span className="text-lg">{wallet.icon}</span>
-                      <span>{wallet.name}</span>
+                      <span className="text-lg">🦊</span>
+                      <span>MetaMask</span>
                     </div>
                   </SelectItem>
-                ))}
+                ) : (
+                  wallets.map((wallet) => (
+                    <SelectItem key={wallet.id} value={wallet.id} className="hover:bg-slate-700 text-white">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-lg">{wallet.icon}</span>
+                        <span>{wallet.name}</span>
+                      </div>
+                    </SelectItem>
+                  ))
+                )}
               </SelectContent>
             </Select>
           </div>
