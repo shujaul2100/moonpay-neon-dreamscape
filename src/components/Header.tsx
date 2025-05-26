@@ -1,6 +1,8 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Wallet } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import ConnectWallet from "./ConnectWallet";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,12 +37,9 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Connect Wallet Button */}
+          {/* Connect Wallet Component */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-background font-semibold glow-effect">
-              <Wallet className="mr-2 h-4 w-4" />
-              Connect Wallet
-            </Button>
+            <ConnectWallet />
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,10 +67,9 @@ const Header = () => {
               <a href="#" className="text-foreground hover:text-primary transition-colors">
                 Docs
               </a>
-              <Button className="bg-gradient-to-r from-primary to-accent hover:from-primary/80 hover:to-accent/80 text-background font-semibold glow-effect w-full">
-                <Wallet className="mr-2 h-4 w-4" />
-                Connect Wallet
-              </Button>
+              <div className="pt-2">
+                <ConnectWallet />
+              </div>
             </nav>
           </div>
         )}
