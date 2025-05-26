@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -96,7 +95,7 @@ const TransferForm = () => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="address">Your Wallet Address</Label>
+            <Label htmlFor="address">Receiver's Wallet Address</Label>
             <Input
               id="address"
               placeholder="0x..."

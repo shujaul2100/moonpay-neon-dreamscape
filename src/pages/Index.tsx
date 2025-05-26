@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,7 +27,7 @@ const Index = () => {
           </div>
           
           <h1 className="text-6xl md:text-8xl font-bold mb-8 glow-text">
-            Moon-App
+            Moon-Pay
             <span className="text-primary">.AI</span>
           </h1>
           

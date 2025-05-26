@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Wallet } from "lucide-react";
@@ -16,7 +15,7 @@ const Header = () => {
               <span className="text-background font-bold text-lg">M</span>
             </div>
             <span className="text-2xl font-bold glow-text">
-              Moon-App<span className="text-primary">.AI</span>
+              Moon-Pay<span className="text-primary">.AI</span>
             </span>
           </div>
 
