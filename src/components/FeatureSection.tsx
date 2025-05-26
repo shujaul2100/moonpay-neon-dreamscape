@@ -6,33 +6,33 @@ const FeatureSection = () => {
   const features = [
     {
       icon: Shield,
-      title: "Military-Grade Security",
-      description: "Advanced encryption and multi-signature protocols protect your assets across all transactions.",
+      title: "Institutional Security",
+      description: "Bank-grade security infrastructure with multi-layer protection and real-time threat monitoring.",
     },
     {
       icon: Zap,
-      title: "Lightning Fast",
-      description: "AI-optimized routing ensures the fastest possible cross-chain transfers with minimal fees.",
+      title: "Sub-Second Transfers",
+      description: "Lightning-fast cross-chain transfers with AI-optimized routing for minimal latency.",
     },
     {
       icon: Globe,
-      title: "Universal Compatibility",
-      description: "Support for 50+ blockchains and 1000+ cryptocurrencies with seamless interoperability.",
+      title: "Universal Protocol",
+      description: "Support for 50+ blockchains and 1000+ tokens with seamless interoperability.",
     },
     {
       icon: Brain,
-      title: "AI-Powered",
-      description: "Machine learning algorithms optimize routes, predict gas fees, and ensure successful transfers.",
+      title: "AI-Driven Intelligence",
+      description: "Machine learning algorithms that adapt to market conditions and optimize every transaction.",
     },
     {
       icon: Lock,
-      title: "Non-Custodial",
-      description: "You maintain full control of your private keys. We never have access to your funds.",
+      title: "Non-Custodial Design",
+      description: "You maintain complete control of your assets. We never hold your private keys.",
     },
     {
       icon: TrendingUp,
-      title: "Best Rates",
-      description: "Intelligent aggregation across DEXs and bridges to guarantee the most competitive rates.",
+      title: "Optimal Rates",
+      description: "Dynamic fee optimization and liquidity aggregation for the best possible rates.",
     },
   ];
 
@@ -40,11 +40,11 @@ const FeatureSection = () => {
     <section className="relative z-10 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-            Why Choose <span className="text-primary">Moon-App.AI</span>?
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+            Why Choose <span className="text-cyan-400">Moon-Pay.AI</span>?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience the future of decentralized finance with our cutting-edge cross-chain infrastructure
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+            Experience the future of decentralized cross-chain infrastructure with our cutting-edge technology
           </p>
         </div>
 
@@ -52,18 +52,18 @@ const FeatureSection = () => {
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="gradient-border bg-card/50 backdrop-blur-sm hover:bg-card/70 transition-all duration-300 group"
+              className="bg-slate-800/50 backdrop-blur-sm border-slate-700 hover:bg-slate-800/70 transition-all duration-300 group hover:border-cyan-400/50"
             >
               <CardHeader>
-                <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center mb-4 glow-effect group-hover:scale-110 transition-transform">
-                  <feature.icon className="h-6 w-6 text-background" />
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-cyan-500/25">
+                  <feature.icon className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed">
+                <CardDescription className="text-base leading-relaxed text-slate-400">
                   {feature.description}
                 </CardDescription>
               </CardContent>

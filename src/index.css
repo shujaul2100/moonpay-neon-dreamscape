@@ -59,17 +59,17 @@
 
 @layer utilities {
   .glow-effect {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
   }
   
   .glow-text {
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
   }
   
   .gradient-border {
     border: 1px solid transparent;
     background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card))) padding-box,
-                linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent))) border-box;
+                linear-gradient(135deg, rgb(6, 182, 212), rgb(147, 51, 234)) border-box;
   }
   
   .particles-bg {
@@ -96,7 +96,7 @@
   }
   
   @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
-    50% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+    0%, 100% { box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.6); }
   }
 }
