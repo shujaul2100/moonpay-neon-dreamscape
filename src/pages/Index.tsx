@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Wallet, Shield, Zap, Globe, Network, Lock, TrendingUp } from "lucide-react";
+import { ArrowRight, Wallet, Shield, Zap, Globe, Network, Lock, TrendingUp, CheckCircle } from "lucide-react";
 import ParticleBackground from "@/components/ParticleBackground";
 import Header from "@/components/Header";
 import TransferForm from "@/components/TransferForm";
@@ -19,6 +19,37 @@ const Index = () => {
       transferSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const walletIntegrations = [
+    {
+      name: "MetaMask",
+      icon: "🦊",
+      description: "The world's leading self-custodial wallet",
+      users: "100M+",
+      gradient: "from-orange-500 to-yellow-500"
+    },
+    {
+      name: "Trust Wallet",
+      icon: "🛡️",
+      description: "Simple and secure crypto wallet",
+      users: "60M+",
+      gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+      name: "BitGet",
+      icon: "🚀",
+      description: "Professional trading wallet",
+      users: "25M+",
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
+      name: "Phantom",
+      icon: "👻",
+      description: "Solana ecosystem wallet",
+      users: "15M+",
+      gradient: "from-indigo-500 to-purple-500"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 text-foreground relative overflow-hidden">
@@ -93,6 +124,69 @@ const Index = () => {
             <div className="text-center">
               <div className="text-3xl font-bold text-cyan-400 mb-2">99.9%</div>
               <div className="text-slate-400">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wallet Integration Section */}
+      <section className="relative z-10 py-20 px-4 bg-gradient-to-r from-slate-900/50 to-purple-900/50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-6 text-purple-400 bg-purple-400/10 border-purple-400/30">
+              Seamless Integration
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+              Connect with Your Favorite Wallet
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Moon-Pay.AI integrates seamlessly with the most trusted wallets in the crypto ecosystem
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {walletIntegrations.map((wallet, index) => (
+              <div
+                key={wallet.name}
+                className="group relative bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/10"
+              >
+                <div className="text-center">
+                  <div className="text-5xl mb-4">{wallet.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{wallet.name}</h3>
+                  <p className="text-slate-400 text-sm mb-4">{wallet.description}</p>
+                  <div className="flex items-center justify-center space-x-2">
+                    <CheckCircle className="h-4 w-4 text-green-400" />
+                    <span className="text-green-400 text-sm font-medium">{wallet.users} users</span>
+                  </div>
+                </div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${wallet.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <div className="bg-slate-800/60 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-8 mb-6">
+                <Wallet className="h-12 w-12 text-cyan-400" />
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-white mb-2">Universal Wallet Support</h3>
+                  <p className="text-slate-400">Connect once, transfer everywhere. No additional setup required.</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400 mb-1">One-Click</div>
+                  <div className="text-slate-400 text-sm">Connection</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400 mb-1">Secure</div>
+                  <div className="text-slate-400 text-sm">Authentication</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400 mb-1">Multi-Chain</div>
+                  <div className="text-slate-400 text-sm">Support</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
